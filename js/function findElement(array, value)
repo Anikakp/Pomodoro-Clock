@@ -1,0 +1,28 @@
+function findElement(array, value)
+{
+	
+	var length1 = array.length;
+	console.log("length" + length1);
+	var mid = Math.floor(length1/2);
+
+ console.log("mid" + mid);
+	if(array[mid] == value)
+	{
+	  return mid;
+	}
+    else {
+     if(value < array[mid])
+      { 
+         array = array.splice(0,mid);
+         console.log(array);
+         return findElement(array,value); 
+      }
+      else
+       {
+         array = array.splice(mid,length-1);
+         console.log(array);
+         return findElement(array,value);
+       }
+    }
+    
+}
